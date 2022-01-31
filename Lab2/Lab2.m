@@ -101,7 +101,7 @@ probD = numSuccessD / L;
 % Calculate the theoretical results
 bprobA = bern(5,10,0.5);
 bprobB = bern(9,9,4/6);
-bprobC = 1 - bern(8,35,.5);
+bprobC = 1 - (bern(8,35,.5) + bern(7,35,.5) + bern(6,35,.5) + bern(5,35,.5) + bern(4,35,.5) + bern(3,35,.5) + bern(2,35,.5) + bern(1,35,.5) + bern(0,35,.5));
 bprobD = bern(0, 9, 1/6) + bern(1, 9, 1/6) + bern(2, 9, 1/6);
 
 % Calculate percent difference
