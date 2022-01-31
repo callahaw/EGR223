@@ -8,14 +8,11 @@
 % Instructor: Prof. Baine
 % Description: This script file utilizes a set of nested for loops that
 % call a dice rolling functions to generate a large sample size of
-% statistical experiments. Four experiments were conducted and the
-% emipracal probility of each event was calculated. The theoretical
-% bernouli probailty was also called for each, and the percent difference
-% was calculated.
+% statistical experiments. Four 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 rng('shuffle');
+p = bern(5, 10, 0.5);
 
-% variables declarations
 numSuccessA = 0;
 numSuccessB = 0;
 numSuccessC = 0;
@@ -42,6 +39,7 @@ for L = 1:1:100000
             kA = kA + 1;
         end
     end
+    
     
     % CASE B
     % increment success counter if 0 rolls are 1 or 4
@@ -106,23 +104,19 @@ bprobD = bern(0, 9, 1/6) + bern(1, 9, 1/6) + bern(2, 9, 1/6);
 
 % Calculate percent difference
 diffA = abs(probA - bprobA)/((probA + bprobA) / 2) * 100;
-diffB = abs(probB - bprobB)/((probB + bprobB) / 2) * 100;
-diffC = abs(probC - bprobC)/((probC + bprobC) / 2) * 100;
-diffD = abs(probD - bprobD)/((probD + bprobD) / 2) * 100;
+diffB = abs(probA - bprobA)/((probA + bprobA) / 2) * 100;
+diffA = abs(probA - bprobA)/((probA + bprobA) / 2) * 100;
+diffA = abs(probA - bprobA)/((probA + bprobA) / 2) * 100;
 
 % Print out all results
 disp("Case A Empirical Result: " + probA);
 disp("Case A Theoretical Result: " + bprobA);
-disp("Case A Percent Difference: " + diffA);
 disp("Case B Empirical Result: " + probB);
 disp("Case B Theoretical Result: " + bprobB);
-disp("Case B Percent Difference: " + diffB);
 disp("Case C Empirical Result: " + probC);
 disp("Case C Theoretical Result: " + bprobC);
-disp("Case C Percent Difference: " + diffC);
 disp("Case D Empirical Result: " + probD);
 disp("Case D Theoretical Result: " + bprobD);
-disp("Case D Percent Difference: " + diffD);
 
 
 
